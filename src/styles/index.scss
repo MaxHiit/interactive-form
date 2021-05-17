@@ -1,0 +1,20 @@
+:root {
+	--mainBg: rgb(255, 228, 196);
+}
+
+$text-color: rgb(210, 105, 30);
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	height: 100vh;
+	background: var(--mainBg);
+	color: $text-color;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
