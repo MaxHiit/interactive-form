@@ -1,0 +1,14 @@
+#home-container {
+	display: flex;
+	flex-direction: column;
+
+	.space-container {
+		display: flex;
+		justify-content: space-evenly;
+	}
+
+	.space-link {
+		margin-top: 5em;
+		align-self: center;
+	}
+}
