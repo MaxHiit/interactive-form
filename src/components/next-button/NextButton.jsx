@@ -1,14 +1,17 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { Context } from '../../Context';
 import './next-button.scss';
 
-const NextButton = ({ optionsData }) => {
+const NextButton = ({ srcNextStep, optionsData }) => {
 	const { nextStep } = useContext(Context);
 
 	return (
-		<button className='btn--next' onClick={() => nextStep(optionsData)}>
-			Sélectionner
-		</button>
+		<Link to={srcNextStep}>
+			<button className='btn--next' onClick={() => nextStep(optionsData)}>
+				Sélectionner
+			</button>
+		</Link>
 	);
 };
 

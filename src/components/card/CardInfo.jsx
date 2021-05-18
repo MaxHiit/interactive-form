@@ -13,7 +13,7 @@ const CardInfo = ({ data }) => {
 			<p className='card--detail'>
 				Espace de stockage: {data.stockageSpaceDetail} <br /> ({data.m3Storage}m3)
 			</p>
-			<NextButton optionsData={data} />
+			<NextButton srcNextStep='/space-recap' optionsData={data} />
 			<h3 className='card--price'>{data.price}€/mois</h3>
 		</li>
 	);
