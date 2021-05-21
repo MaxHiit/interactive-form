@@ -10,7 +10,7 @@ import Sun from '../../components/icon/Sun';
 import Check from '../../components/icon/Check';
 import './space-recap.scss';
 
-const SpaceRecap = ({}) => {
+const SpaceRecap = () => {
 	const { step } = useContext(Context);
 	return (
 		<div id='space-recap-container' className='container'>
@@ -20,15 +20,14 @@ const SpaceRecap = ({}) => {
 			</div>
 			<div className='storage-detail'>
 				{step.map((stepData) => {
-					console.log(stepData);
-					{
-						/* if (stepData.name === 'step 1') {
+					if (stepData.name === 'step 1') {
+						console.log(stepData.options.price);
 						<p className='storage__detail--price'>{stepData.options.price}€/mois</p>;
-					} */
+						<p className='storage__detail--m3Storage'>
+							Pour un volume de {stepData.options.m3storage}m3
+						</p>;
 					}
 				})}
-				<p className='storage__detail--price'>24€/mois</p>;
-				<p className='storage__detail--m3Storage'>Pour un volume de 0.5m3</p>
 				<p className='storage__detail--good-news'>
 					Bonne nouvelle ! <br />
 					Vous économisez 30% par rapport à un box de stockage traditionnel de taille équivalente.
