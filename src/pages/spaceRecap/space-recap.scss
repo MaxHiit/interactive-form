@@ -1,0 +1,62 @@
+@import '../../styles/variables';
+
+#space-recap-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	h1 {
+		padding: 0.5em 0;
+	}
+	.img-wrapper {
+		width: 250px;
+		height: 400px;
+	}
+
+	.storage-detail {
+		text-align: center;
+
+		> p {
+			font-size: 3rem;
+		}
+
+		.storage__detail--good-news {
+			padding: 1rem 0;
+			text-align: left;
+			font-size: 2rem;
+		}
+	}
+
+	.storage-benefit {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		padding: 1rem 0 3rem 0;
+
+		.benefit-detail__list {
+			color: $validateText;
+
+			.detail__item--bold {
+				font-weight: bold;
+			}
+		}
+	}
+
+	.benefit {
+		display: flex;
+		align-items: center;
+
+		&__text-green {
+			color: $validateText;
+		}
+
+		&:nth-child(odd) {
+			padding: 0.2em 0;
+		}
+
+		&__icon {
+			width: 20px;
+			margin-right: 1em;
+		}
+	}
+}
