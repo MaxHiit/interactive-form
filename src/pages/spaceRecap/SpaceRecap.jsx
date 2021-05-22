@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { isValidElement, useContext } from 'react';
 import { Context } from '../../Context';
 import NextButton from '../../components/next-button/NextButton';
 import srcSpaceRecap from '../../images/space-recap.png';
@@ -19,13 +19,16 @@ const SpaceRecap = () => {
 				<img src={srcSpaceRecap} alt='box de stockage contenant des cartons' />
 			</div>
 			<div className='storage-detail'>
-				{step.map((stepData) => {
+				{step.map((stepData, idx) => {
 					if (stepData.name === 'step 1') {
-						console.log(stepData.options.price);
-						<p className='storage__detail--price'>{stepData.options.price}€/mois</p>;
-						<p className='storage__detail--m3Storage'>
-							Pour un volume de {stepData.options.m3storage}m3
-						</p>;
+						return (
+							<div key={idx}>
+								<p className='storage__detail--price'>{stepData.options.price}€/mois</p>
+								<p className='storage__detail--m3Storage'>
+									Pour un volume de {stepData.options.m3Storage}m3
+								</p>
+							</div>
+						);
 					}
 				})}
 				<p className='storage__detail--good-news'>
