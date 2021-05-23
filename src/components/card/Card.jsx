@@ -30,3 +30,5 @@ const Card = ({ data }) => {
 };
 
 export default Card;
+
+// TODO Tunr in a generic card  for reuse components in all app
