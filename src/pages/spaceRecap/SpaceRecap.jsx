@@ -8,8 +8,8 @@ import MotionSensor from '../../components/icon/MotionSensor';
 import Fire from '../../components/icon/Fire';
 import Sun from '../../components/icon/Sun';
 import Check from '../../components/icon/Check';
+import { stepIndexes } from '../../data';
 import './space-recap.scss';
-
 const SpaceRecap = () => {
 	const { step } = useContext(Context);
 	return (
@@ -108,7 +108,7 @@ const SpaceRecap = () => {
 					</div>
 				</div>
 			</div>
-			<NextButton srcNextStep='/help' />
+			<NextButton srcNextStep='/help' stepIndex={stepIndexes.space_recap} />
 		</div>
 	);
 };

@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
-
 const Context = React.createContext();
 
 const ContextProvider = ({ children }) => {
 	const [step, setStep] = useState([
-		{ name: 'step 1', options: {}, isValidate: false },
-		{ name: 'step 2', options: {}, isValidate: false },
-		{ name: 'step 3', options: {}, isValidate: false }
+		{ name: 'step 1', options: {} },
+		{ name: 'step 2', options: {} },
+		{ name: 'step 3', options: {} }
 	]);
 
-	const nextStep = (optionsData) => {
-		console.log(optionsData);
+	const nextStep = (optionsData = null, stepIndex) => {
 		const stepMap = step.map((prevStep, idx) => {
-			if (!idx) {
-				return { ...prevStep, options: optionsData, isValidate: true };
+			if (idx === stepIndex) {
+				return { ...prevStep, options: optionsData };
 			}
 			return prevStep;
 		});

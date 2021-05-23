@@ -1,8 +1,9 @@
 import React from 'react';
 import NextButton from '../next-button/NextButton';
-import './cardInfo.scss';
+import { stepIndexes } from '../../data';
+import './card.scss';
 
-const CardInfo = ({ data }) => {
+const Card = ({ data }) => {
 	return (
 		<li className='card'>
 			<div className='card--img-wrapper'>
@@ -13,10 +14,21 @@ const CardInfo = ({ data }) => {
 			<p className='card--detail'>
 				Espace de stockage: {data.stockageSpaceDetail} <br /> ({data.m3Storage}m3)
 			</p>
-			<NextButton srcNextStep='/space-recap' optionsData={data} />
+			<NextButton
+				srcNextStep='/space-recap'
+				optionsData={{
+					stockageStorageDetail: data.stockageSpaceDetail,
+					stockageM3Storage: data.m3Storage,
+					stockageStorageName: data.name,
+					stockageStoragePrice: data.price
+				}}
+				stepIndex={stepIndexes.home}
+			/>
 			<h3 className='card--price'>{data.price}€/mois</h3>
 		</li>
 	);
 };
 
-export default CardInfo;
+export default Card;
+
+// TODO Tunr in a generic card  for reuse components in all app
