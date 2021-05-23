@@ -1,7 +1,7 @@
 import React from 'react';
 import NextButton from '../next-button/NextButton';
 import { stepIndexes } from '../../data';
-import './Card.scss';
+import './card.scss';
 
 const Card = ({ data }) => {
 	return (
